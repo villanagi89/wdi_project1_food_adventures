@@ -1,12 +1,12 @@
 require 'rails_helper'
 
-RSpec.feature 'Managing entries' do
-  scenario 'List all entries' do
-    Journal.create!(title: 'Park Hyatt Resort (California)', date: 'March 2015')
+RSpec.feature 'Managing journal entries' do
+  scenario 'List all journal entries' do
+    Journal.create!(event_title: 'Park Hyatt Resort (California)', event_date: 'March 2015')
 
     visit '/journals'
-    expect(page).to have_content 'My adventures'
-    expect(page).to have_selector 'journal', count: 1
+    expect(page).to have_content 'Journal Entries'
+    expect(page).to have_selector 'ul', count: 1
   end
 
 

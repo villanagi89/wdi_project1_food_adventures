@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   #devise_for :users
+  root 'journals#index'
 
-   root 'home#index'
+  resources :journals, shallow: true do
+    resources :adventures
+    resources :dishes
+  end
 
 
 
