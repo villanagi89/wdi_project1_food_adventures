@@ -1,0 +1,10 @@
+<%= form_for @journal do |f| %>
+  <%= f.label :event_title %>
+  <%= f.text_field :event_title %>
+
+  <%= f.label :event_date %>
+  <%= f.datetime_field :event_date %>
+
+  <%= f.submit %>
+
+<% end %>

@@ -9,12 +9,14 @@ RSpec.feature 'Managing journal entries' do
     expect(page).to have_selector 'ul', count: 1
   end
 
-
-
-
-
-
-
-
-
+  scenario 'Create a new journal entry' do
+    visit '/journals/new'
+    #save_and_open_page
+    fill_in 'journal_event_title', with: 'Park Hyatt Resort (California)'
+    fill_in 'journal_event_date', with: 'March 2015'
+    click_button 'Create Journal'
+  end
 end
+
+
+

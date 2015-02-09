@@ -1,10 +1,11 @@
 <h1>Journal Entries</h1>
 
-<!-- <h3>Add a Journal Entry</h3>
-<%#= link_to 'New Journal entry', new_list_path %> -->
+<h3>Add a Journal Entry</h3>
+<%= link_to 'New journal entry', new_journal_path %>
 
 <% @journals.each do |journal| %>
 <ul>
   <li><%= journal.event_title %><%= journal.event_date %></li>
   <% end %>
 </ul>
+
