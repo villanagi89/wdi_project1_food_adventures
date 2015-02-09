@@ -1,1 +1,7 @@
 <h1><%= @journal.event_title %></h1>
+
+
+<%= link_to 'Edit Journal title', edit_journal_path(@journal) %>
+<%= link_to 'Delete this journal entry', journal_path(@journal),
+                                          method: :delete,
+                                          data: {confirm: 'Are you sure?'} %>

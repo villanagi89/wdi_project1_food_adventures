@@ -5,7 +5,6 @@
 
 <% @journals.each do |journal| %>
 <ul>
-  <li><%= journal.event_title %><%= journal.event_date %></li>
+  <li><%= link_to(journal.event_title, journal_path(journal.id))%><%= journal.event_date %></li>
   <% end %>
 </ul>
-
