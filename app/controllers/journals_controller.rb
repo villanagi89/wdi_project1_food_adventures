@@ -9,6 +9,7 @@ class JournalsController < ApplicationController
 
   def show
     @journal = Journal.find(params[:id])
+    @adventure = @journal.adventures
   end
 
   def create
@@ -24,6 +25,7 @@ class JournalsController < ApplicationController
 
   def edit
     @journal = Journal.find(params[:id])
+
   end
 
   def update

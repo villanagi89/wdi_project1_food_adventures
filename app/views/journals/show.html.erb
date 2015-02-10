@@ -1,8 +1,14 @@
 <h1><%= @journal.event_title %></h1>
 
-<h2><%#= @adventure.name  %></h2>
-<p><%#= %></p>
+<p><%= link_to 'Add some details', new_journal_adventure_path(@journal, @adventure) %>
 
+<% @adventure.each do |adventure| %>
+<h2><%=adventure.name%></h2>
+<p><%= adventure.address%></p>
+<p><%= adventure.phone%></p>
+<p><%= adventure.meal_description%></p>
+<% end %>
+<%= link_to 'Edit Journal details', edit_adventure_path(@journal, @adventure) %>
 <%= link_to 'Edit Journal title', edit_journal_path(@journal) %>
 <%= link_to 'Delete this journal entry', journal_path(@journal),
                                           method: :delete,
