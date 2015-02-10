@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-  #devise_for :users
-  root 'journals#index'
+  root 'welcome#index'
+
+  devise_for :users
+
 
   resources :journals, shallow: true do
     resources :adventures
-    resources :dishes
   end
 
 
