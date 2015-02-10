@@ -5,8 +5,7 @@ class AdventuresController < ApplicationController
   end
 
   def edit
-    @journal = Journal.find(params[:journal_id])
-    @adventure = @journal.adventures.find(params[:id])
+    @adventure = Adventure.find(params[:id])
   end
 
   def create
