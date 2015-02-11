@@ -6,14 +6,15 @@
                                          method: :delete,
                                          data: {confirm: 'Are you sure?'} %>
 
+<%= link_to 'Add an adventure', new_journal_adventure_path(@journal) %>
 
 <% @adventure.each do |adventure| %>
- <hr>
- <h2><%=adventure.name%></h2>
- <p><%= adventure.address%></p>
- <p><%= adventure.phone%></p>
- <p><%= adventure.meal_description%></p>
- <%= link_to 'Edit Adventure', edit_adventure_path(adventure) %>
+   <hr>
+   <h2><%=adventure.name%></h2>
+   <p><%= adventure.address%></p>
+   <p><%= adventure.phone%></p>
+   <p><%= adventure.meal_description%></p>
+   <%= link_to 'Edit Adventure', edit_adventure_path(adventure) %>
 <% end %>
 
 

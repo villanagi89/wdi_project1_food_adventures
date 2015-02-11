@@ -32,7 +32,7 @@ class JournalsController < ApplicationController
     @journal = Journal.find(params[:id])
 
     if @journal.update(journal_params)
-      redirect_to @journal
+      redirect_to action: :index
     else
       render :edit
     end
@@ -48,6 +48,6 @@ class JournalsController < ApplicationController
 
   private
     def journal_params
-      params.require(:journal).permit(:event_title, :event_date)
+      params.require(:journal).permit(:event_title, :event_date).merge(user_id: current_user.id)
     end
 end

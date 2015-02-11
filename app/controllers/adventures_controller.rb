@@ -1,4 +1,5 @@
 class AdventuresController < ApplicationController
+
   def new
     @journal = Journal.find(params[:journal_id])
     @adventure = @journal.adventures.new
@@ -20,11 +21,13 @@ class AdventuresController < ApplicationController
   end
 
   def update
-    @journal = Journal.find(params[:journal_id])
-    @adventure = @journal.adventures.find(params[:id])
+    binding.pry
+    # @journal = Journal.find(params[:journal_id])
+    # @adventure = @journal.adventures.find(params[:id])
+    @adventure = Adventure.find(params[:id])
 
     if @adventure.update_attributes(adventure_params)
-      redirect_to journal_path(@journal)
+      redirect_to journal_path(@adventure.journal)
     else
       render :edit
     end
