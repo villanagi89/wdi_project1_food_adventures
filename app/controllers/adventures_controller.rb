@@ -21,9 +21,6 @@ class AdventuresController < ApplicationController
   end
 
   def update
-    binding.pry
-    # @journal = Journal.find(params[:journal_id])
-    # @adventure = @journal.adventures.find(params[:id])
     @adventure = Adventure.find(params[:id])
 
     if @adventure.update_attributes(adventure_params)
