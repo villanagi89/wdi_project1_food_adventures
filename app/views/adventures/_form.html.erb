@@ -1,8 +1,6 @@
-<form role="form">
-  <div class="form-group">
   <%= form_for [@journal, @adventure] do |f| %><br>
     <p>Add the name of the location you atteneded</p>
-    <label for="Location name"><%= f.label :name %></label>
+    <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
     <p>Add the contact information for the location (if any)</p>
@@ -14,8 +12,6 @@
     <p>Prove a description of the meal you enjoyed</p>
     <%= f.label :meal_description %>
     <%= f.text_field :meal_description %>
-  </div>
 
-  <button type='submit' class='btn btn-default'><%= f.submit %></button>
+    <%= f.submit class: "btn btn-primary" %>
   <% end %>
-</form>
