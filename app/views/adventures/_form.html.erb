@@ -1,16 +1,21 @@
-<%= form_for [@journal, @adventure] do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+<form role="form">
+  <div class="form-group">
+  <%= form_for [@journal, @adventure] do |f| %><br>
+    <p>Add the name of the location you atteneded</p>
+    <label for="Location name"><%= f.label :name %></label>
+    <%= f.text_field :name %>
+  </div>
+    <p>Add the contact information for the location (if any)</p>
+    <%= f.label :address %>
+    <%= f.text_field :address %>
 
-  <%= f.label :address %>
-  <%= f.text_field :address %>
+    <%= f.label :phone %>
+    <%= f.text_field :phone %>
+    <p>Prove a description of the meal you enjoyed</p>
+    <%= f.label :meal_description %>
+    <%= f.text_field :meal_description %>
+  </div>
 
-  <%= f.label :phone %>
-  <%= f.text_field :phone %>
-
-  <%= f.label :meal_description %>
-  <%= f.text_field :meal_description %>
-
-  <%= f.submit %>
-
-<% end %>
+  <button type='submit' class='btn btn-default'><%= f.submit %></button>
+  <% end %>
+</form>

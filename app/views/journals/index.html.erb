@@ -1,10 +1,11 @@
 <h1>Journal Entries</h1>
 
-<h3>Add a Journal Entry</h3>
-<%= link_to 'New journal entry', new_journal_path %>
+<p class="lead">Click the button below to add a new entry to your journal</p>
+<%= link_to 'New journal entry', new_journal_path, class: "btn btn-default btn-sm" %>
 
+<h3>Your journals</h3>
 <% @journals.each do |journal| %>
-<ul>
-  <li><%= link_to(journal.event_title, journal_path(journal.id))%><%= journal.event_date %></li>
+<ul class="list-unstyled">
+  <li><%= link_to(journal.event_title, journal_path(journal.id))%></li>
   <% end %>
 </ul>

@@ -9,6 +9,7 @@ RSpec.feature 'Managing journal entries' do
     expect(page).to have_content 'Welcome to Food adventures'
   end
   scenario 'List all journal entries' do
+    User.create!(email: 'joe.nolastname@hotmail.com', password: 'password123')
     Journal.create!(event_title: 'Park Hyatt Resort (California)', event_date: 'March 2015')
     visit '/journals'
     expect(page).to have_content 'Welcome to Food adventures'
